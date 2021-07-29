@@ -1,0 +1,33 @@
+server:
+  port: 9001
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+  
+  
+spring:
+  application:
+    name: Api-gateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: Contact-Service
+        uri: lb://Contact-Service
+        predicates:
+        - Path=/contacts/**  
+      - id: BookingOrder-Service
+        uri: lb://BookingOrder-Service
+        predicates:
+        - Path=/orders/**
+      - id: Train-Service
+        uri: lb://Train-Service
+        predicates:
+        - Path=/trains/**
+     
