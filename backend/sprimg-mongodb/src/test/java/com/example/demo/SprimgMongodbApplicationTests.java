@@ -1,10 +1,10 @@
-package com.joy.trainservice;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TrainServiceApplicationTests {
+class SprimgMongodbApplicationTests {
 
 	@Test
 	void contextLoads() {
