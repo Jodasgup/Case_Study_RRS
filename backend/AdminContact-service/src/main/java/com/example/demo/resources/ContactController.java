@@ -35,12 +35,12 @@ public class ContactController {
 		
 	}
 	@GetMapping("/findAllContacts/{id}")
-	public Optional<Contact> getContact(@PathVariable int id){
+	public Optional<Contact> getContact(@PathVariable String id){
 		return contactrepository.findById(id);
 	}
 	
 	 @DeleteMapping("/delcontact/{id}")
-		public String deleteContact (@PathVariable int id) {
+		public String deleteContact (@PathVariable String id) {
 			contactrepository.deleteById(id);
 			return "Contact deleted with id : "+id;
 		}
